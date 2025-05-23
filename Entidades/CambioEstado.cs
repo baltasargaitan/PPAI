@@ -9,13 +9,13 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
     public class CambioEstado
     {
         private DateTime fechaHoraInicio;
-        private DateTime fechaHoraFin;
+        private DateTime? fechaHoraFin;
 
         // Constructor (equivale al "new()" del diagrama)
-        public CambioEstado(DateTime inicio, DateTime fin)
+        public CambioEstado(DateTime inicio)
         {
             fechaHoraInicio = inicio;
-            fechaHoraFin = fin;
+            fechaHoraFin = null;
         }
         // Getter y setter opcionales si usás propiedades automáticas
         public DateTime FechaHoraInicio
