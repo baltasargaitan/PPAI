@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using PPAI2025_3K1_4_1_Programa.Entidades;
 using PPAI2025_3K1_4_1_Programa.Controladores;
 
 namespace PPAI2025_3K1_4_1_Programa.Forms
 {
     public partial class CerrarOrdenInspeccionForm : Form
     {
-        private OrdenInspeccion ordenSeleccionada;
+        private OrdenDeInspeccion ordenSeleccionada;
         private GestorCierreInspeccion controlador;
 
         public CerrarOrdenInspeccionForm(GestorCierreInspeccion controlador)
@@ -244,7 +245,7 @@ namespace PPAI2025_3K1_4_1_Programa.Forms
             // 
             // CerrarOrdenInspeccionForm
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(653, 400);
             this.Name = "CerrarOrdenInspeccionForm";
             this.Load += new System.EventHandler(this.CerrarOrdenInspeccionForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).EndInit();

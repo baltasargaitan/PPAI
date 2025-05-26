@@ -46,23 +46,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boundary\PantallaCierreInspeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boundary\PantallaCierreInspeccion.Designer.cs">
+      <DependentUpon>PantallaCierreInspeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controladores\GestorCierreInspeccion.cs" />
+    <Compile Include="DatosHardcodeados\DatosHardcodeados.cs" />
     <Compile Include="Entidades\CambioEstado.cs" />
     <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\EstacionSismologica.cs" />
     <Compile Include="Entidades\Estado.cs" />
+    <Compile Include="Entidades\MotivoFueraServicio.cs" />
+    <Compile Include="Entidades\MotivoTipo.cs" />
+    <Compile Include="Entidades\OrdenDeInspeccion.cs" />
+    <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\Sesion.cs" />
     <Compile Include="Entidades\Sismografo.cs" />
     <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\CerrarOrdenInspeccionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\MenuPrincipalForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Boundary\PantallaCierreInspeccion.resx">
+      <DependentUpon>PantallaCierreInspeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CerrarOrdenInspeccionForm.resx">
+      <DependentUpon>CerrarOrdenInspeccionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Servicios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

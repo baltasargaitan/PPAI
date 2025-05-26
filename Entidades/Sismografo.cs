@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace PPAI2025_3K1_4_1_Programa.Entidades
 {
     public class Sismografo
     {
-        public DateTime fechaAdquisicion;
-        public int identificadorSismografo;
-        public int nroSerie;
-        public EstacionSismologica estacionSismologica; // Atributo para almacenar la estación sismológica asociada
+        public DateTime fechaAdquisicion { get; set; }
+        public int identificadorSismografo { get; set; }
+        public int nroSerie { get; set; }
+        public EstacionSismologica estacionSismologica { get; set; } // Atributo para almacenar la estación sismológica asociada
         // Lista de cambios de estado
-        private List<CambioEstado> cambiosEstado = new List<CambioEstado>();
+        public List<CambioEstado> cambiosEstado = new List<CambioEstado>();
 
         // Constructor
-        public Sismografo(DateTime fechaAdq, int idSismograf, int numSerie, DateTime fechaInicioEstadoInicial, EstacionSismologica estSism)
+        public Sismografo(DateTime fechaAdq, int idSismograf, int numSerie, EstacionSismologica estSism)
         {
             fechaAdquisicion = fechaAdq;
             identificadorSismografo = idSismograf;
@@ -24,38 +25,18 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
             estacionSismologica = estSism; // Asignar la estación sismológica al atributo correspondiente
 
             // Crear el cambio de estado inicial y agregarlo
-            var cambioInicial = new CambioEstado(fechaInicioEstadoInicial);
+            var cambioInicial = new CambioEstado(DateTime.Now, new Estado("sismografo", "Disponible"));
             cambiosEstado.Add(cambioInicial);
-        }
-
-
-        // Propiedades para acceder a los atributos
-        public DateTime FechaAdquisicion
-        {
-            get { return fechaAdquisicion; }
-            set { fechaAdquisicion = value; }
-        }
-
-        public int IdentificadorSismografo
-        {
-            get { return identificadorSismografo; }
-            set { identificadorSismografo = value; }
-        }
-
-        public int NroSerie
-        {
-            get { return nroSerie; }
-            set { nroSerie = value; }
         }
 
         // Obtener el cambio de estado actual (el que no tiene fecha de fin)
         public CambioEstado ObtenerEstadoActual()
         {
-            return cambiosEstado.FindLast(c => c.FechaHoraFin == null);
+            return cambiosEstado.FindLast(c => c.fechaHoraFin == null);
         }
 
         // Crear nuevo cambio de estado (y cerrar el actual si hay uno)
-        public void CrearCambioEstado(DateTime nuevaFechaInicio)
+        public void CrearCambioEstado(DateTime nuevaFechaInicio, Estado estad)
         {
             // Cerrar el actual si está activo
             var actual = ObtenerEstadoActual();
@@ -65,7 +46,7 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
             }
 
             // Crear y agregar nuevo
-            var nuevo = new CambioEstado(nuevaFechaInicio);
+            var nuevo = new CambioEstado(nuevaFechaInicio, estad);
             cambiosEstado.Add(nuevo);
         }
 

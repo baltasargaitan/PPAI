@@ -1,0 +1,5 @@
+C:\Users\usuario\Documents\ProyectosVSCIDE\PPAI2025_3K1_4_1_Programa\obj\Debug\PPAI2025_3K1_4_1_Programa.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\ProyectosVSCIDE\PPAI2025_3K1_4_1_Programa\obj\Debug\PPAI2025_3K1_4_1_Programa.Forms.CerrarOrdenInspeccionForm.resources
+C:\Users\usuario\Documents\ProyectosVSCIDE\PPAI2025_3K1_4_1_Programa\obj\Debug\PPAI2025_3K1_4_1_Programa.Properties.Resources.resources
+C:\Users\usuario\Documents\ProyectosVSCIDE\PPAI2025_3K1_4_1_Programa\obj\Debug\PPAI2025_3K1_4_1_Programa.csproj.GenerateResource.cache
+C:\Users\usuario\Documents\ProyectosVSCIDE\PPAI2025_3K1_4_1_Programa\obj\Debug\PPAI2025_3K1_4_1_Programa.csproj.CoreCompileInputs.cache

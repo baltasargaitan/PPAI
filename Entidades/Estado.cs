@@ -8,13 +8,8 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
 {
     public class Estado
     {
-        private string ambito;
-        private string nombreEstado;
-
-        // Constructor por defecto
-        public Estado()
-        {
-        }
+        public string ambito { get; set; }
+        public string nombreEstado { get; set; }
 
         // Constructor con parámetros (opcional)
         public Estado(string ambito, string nombreEstado)
@@ -22,20 +17,6 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
             this.ambito = ambito;
             this.nombreEstado = nombreEstado;
         }
-
-        // Propiedades
-        public string Ambito
-        {
-            get { return ambito; }
-            set { ambito = value; }
-        }
-
-        public string NombreEstado
-        {
-            get { return nombreEstado; }
-            set { nombreEstado = value; }
-        }
-
         // Métodos
         public bool EsCompletamenteRealizada()
         {

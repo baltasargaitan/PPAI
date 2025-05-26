@@ -13,15 +13,20 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
         public Usuario Usuario { get; set; }
 
         // Constructor
-        public Sesion()
+        public Sesion(DateTime fechaHoraDesde, Usuario usuario)
         {
-            FechaHoraDesde = DateTime.Now; // Asigna la fecha y hora actual
+            this.FechaHoraDesde = fechaHoraDesde; // Asigna la fecha y hora actual
+            this.Usuario = usuario; // Asigna el usuario a la sesión
         }
 
         public Sesion(DateTime fechaHoraHasta)
         {
-            FechaHoraDesde = DateTime.Now; // Asigna la fecha y hora actual
-            FechaHoraHasta = fechaHoraHasta;
+            this.FechaHoraDesde = DateTime.Now; // Asigna la fecha y hora actual
+            this.FechaHoraHasta = fechaHoraHasta;
+        }
+        public Empleado obtenerUsuario()
+        {
+            return Usuario.GetRILogueado(); // Llama al método GetRILogueado de la clase Usuario
         }
     }
 }

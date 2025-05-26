@@ -3,36 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System;
 
 namespace PPAI2025_3K1_4_1_Programa.Entidades
 {
     public class Rol
     {
-        public string descripcion;
-        public string nombreUsuario;
+        // Propiedades automáticas
+        public string Descripcion { get; set; }
+        public string Nombre { get; set; }
 
-        public Rol(string descripcion, string nombreUsuario)
+        // Constructor
+        public Rol(string descripcion, string nombre)
         {
-            this.descripcion = descripcion;
-            this.nombreUsuario = nombreUsuario;
+            this.Descripcion = descripcion;
+            this.Nombre = nombre;
         }
 
-        public string Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
-
-        public string NombreUsuario
-        {
-            get { return nombreUsuario; }
-            set { nombreUsuario = value; }
-        }
-
+        // Método
         public string GetNombre()
         {
-            return nombreUsuario;
+            return Nombre;
         }
     }
-
 }
+

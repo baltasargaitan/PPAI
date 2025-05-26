@@ -8,26 +8,19 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
 {
     public class CambioEstado
     {
-        private DateTime fechaHoraInicio;
-        private DateTime? fechaHoraFin;
+        public DateTime fechaHoraInicio { get; set; }
+        public DateTime? fechaHoraFin { get; set; }
+
+        public Estado estado; // Atributo para almacenar el estado actual
 
         // Constructor (equivale al "new()" del diagrama)
-        public CambioEstado(DateTime inicio)
+        public CambioEstado(DateTime inicio, Estado estado)
         {
-            fechaHoraInicio = inicio;
-            fechaHoraFin = null;
+            this.fechaHoraInicio = inicio;
+            this.fechaHoraFin = null;
+            this.estado = estado; // Inicializar el estado
         }
-        // Getter y setter opcionales si usás propiedades automáticas
-        public DateTime FechaHoraInicio
-        {
-            get { return fechaHoraInicio; }
-            set { fechaHoraInicio = value; }
-        }
-        public DateTime FechaHoraFin
-        {
-            get { return fechaHoraFin; }
-            set { fechaHoraFin = value; }
-        }
+
         // Método esEstadoActual: devuelve true si no tiene fecha de fin
         public bool EsEstadoActual()
         {

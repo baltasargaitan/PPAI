@@ -8,81 +8,53 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
 {
     public class EstacionSismologica
     {
-        private int codigoEstacion;
-        private string documentoCertificacionAdquirida;
-        private DateTime fechaSolicitudCertificacion;
-        public float latitud;
-        private float longitud;
-        private string nombre;
-        private int nroCertificacion;
-        private Sismografo sismografo; // Atributo para almacenar el sismógrafo asociado a la estación
+        public int codigoEstacion { get; set; }
+        public string documentoCertificacionAdquirida { get; set; }
+        public DateTime fechaSolicitudCertificacion { get; set; }
+        public float latitud { get; set; }
+        public float longitud { get; set; }
+        public string nombre { get; set; }
+        public int nroCertificacion { get; set; }
+        public Sismografo sismografo { get; set; } // Atributo para almacenar el sismógrafo asociado a la estación
 
         // Constructor
-        public EstacionSismologica(int codEst, string docCertificacionAdq, DateTime fechaSolCertificacion, float lat, float longit, string nom, int nroCert, Sismografo sismogra)
+        public EstacionSismologica(int codEst, string docCertificacionAdq, DateTime fechaSolCertificacion, float lat, float longit, string nom, int nroCert)
         {
-            codigoEstacion = codEst;
-            documentoCertificacionAdquirida = docCertificacionAdq;
-            fechaSolicitudCertificacion = fechaSolCertificacion;
-            latitud = lat;
-            longitud = longit;
-            nombre = nom;
-            nroCertificacion = nroCert;
-            this.sismografo = sismogra; // Asignar el sismógrafo al atributo correspondiente
-        }
-
-        // Propiedades para acceder a los atributos
-        public int CodigoEstacion
-        {
-            get { return codigoEstacion; }
-            set { codigoEstacion = value; }
-        }
-
-        public string DocumentoCertificacionAdquirida
-        {
-            get { return documentoCertificacionAdquirida; }
-            set { documentoCertificacionAdquirida = value; }
-        }
-
-        public DateTime FechaSolicitudCertificacion
-        {
-            get { return fechaSolicitudCertificacion; }
-            set { fechaSolicitudCertificacion = value; }
-        }
-
-        public float Latitud
-        {
-            get { return latitud; }
-            set { latitud = value; }
-        }
-
-        public float Longitud
-        {
-            get { return longitud; }
-            set { longitud = value; }
-        }
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        public int NroCertificacion
-        {
-            get { return nroCertificacion; }
-            set { nroCertificacion = value; }
-        }
-
-        public Sismografo Sismografo
-        {
-            get { return sismografo; }
-            set { sismografo = value; }
+            this.codigoEstacion = codEst;
+            this.documentoCertificacionAdquirida = docCertificacionAdq;
+            this.fechaSolicitudCertificacion = fechaSolCertificacion;
+            this.latitud = lat;
+            this.longitud = longit;
+            this.nombre = nom;
+            this.nroCertificacion = nroCert;
         }
 
         // Método para obtener IdSismógrafo
         public int ObtenerIdSismografo()
         {
-            return sismografo.IdentificadorSismografo;
+
+            // Verificar si el sismógrafo está asociado a la estación
+            if (sismografo == null)
+            {
+                throw new InvalidOperationException("No hay sismógrafo asociado a esta estación.");
+            }
+            return sismografo.identificadorSismografo;
         }
+        public string GetNombre()
+        {
+            return nombre;
+        }
+
+        // public bool ponerSismografoFueraDeServicio(Sismografo sismografo)
+
+        //{
+        // for (int i = 0; i < sismografo; i++)
+        //{
+        //    if (sismografo.cambiosEstado[i].estado.nombre == "Fuera de Servicio")
+        //      {
+        //           return true;
+        //       }
+        //   }
+        //}
     }
 }
