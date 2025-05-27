@@ -10,20 +10,20 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
     public class Rol
     {
         // Propiedades automáticas
-        public string Descripcion { get; set; }
-        public string Nombre { get; set; }
+        public string descripcion { get; set; }
+        public string nombre { get; set; }
 
         // Constructor
         public Rol(string descripcion, string nombre)
         {
-            this.Descripcion = descripcion;
-            this.Nombre = nombre;
+            this.descripcion = descripcion;
+            this.nombre = nombre;
         }
 
         // Método
-        public string GetNombre()
+        public string getNombre()
         {
-            return Nombre;
+            return nombre;
         }
     }
 }

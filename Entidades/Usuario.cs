@@ -20,9 +20,9 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
             this.contraseña = contraseña;
             this.empleado = empleado; // Asigna el empleado asociado al usuario
         }
-        public Empleado GetRILogueado()
+        public Empleado getRILogueado()
         {
-            return empleado; // Devuelve el empleado asociado al usuario
+            return this.empleado;
         }
 
     }

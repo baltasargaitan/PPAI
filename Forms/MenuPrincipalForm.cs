@@ -20,7 +20,7 @@ namespace PPAI2025_3K1_4_1_Programa.Forms
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void BtnCerrarOrden_Click(object sender, EventArgs e)
+        private void btnCerrarOrden_Click(object sender, EventArgs e)
         {
             // Abrir el formulario de cierre de orden de inspección
             var formCerrarOrden = new CerrarOrdenInspeccionForm();

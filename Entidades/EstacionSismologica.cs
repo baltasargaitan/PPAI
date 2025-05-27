@@ -30,7 +30,7 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
         }
 
         // Método para obtener IdSismógrafo
-        public int ObtenerIdSismografo()
+        public int obtenerIdSismografo()
         {
 
             // Verificar si el sismógrafo está asociado a la estación
@@ -40,7 +40,7 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
             }
             return sismografo.identificadorSismografo;
         }
-        public string GetNombre()
+        public string getNombre()
         {
             return nombre;
         }

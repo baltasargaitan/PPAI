@@ -18,7 +18,7 @@ namespace PPAI2025_3K1_4_1_Programa.Forms
             this.Load += CerrarOrdenInspeccionForm_Load;
         }
 
-        private void CerrarOrdenInspeccionForm_Load(object sender, EventArgs e)
+        private void cerrarOrdenInspeccionForm_Load(object sender, EventArgs e)
         {
             dgvOrdenes.DataSource = controlador.ObtenerOrdenesCompletadasDelRI();
             dgvOrdenes.ClearSelection();
@@ -158,7 +158,7 @@ namespace PPAI2025_3K1_4_1_Programa.Forms
             this.Close();
         }
 
-        private void InitializeComponent()
+        private void initializeComponent()
         {
             this.dgvOrdenes = new System.Windows.Forms.DataGridView();
             this.txtObservacion = new System.Windows.Forms.TextBox();
@@ -265,7 +265,7 @@ namespace PPAI2025_3K1_4_1_Programa.Forms
         private Label lblEstacion;
         private Label lblSismografo;
 
-        private void CerrarOrdenInspeccionForm_Load_1(object sender, EventArgs e)
+        private void cerrarOrdenInspeccionForm_Load_1(object sender, EventArgs e)
         {
 
         }

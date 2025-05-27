@@ -18,27 +18,27 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
             this.nombreEstado = nombreEstado;
         }
         // Métodos
-        public bool EsCompletamenteRealizada()
+        public bool esCompletamenteRealizada()
         {
             return nombreEstado.Equals("Completamente Realizada", StringComparison.OrdinalIgnoreCase);
         }
 
-        public bool EsCerrada()
+        public bool esCerrada()
         {
             return nombreEstado.Equals("Cerrada", StringComparison.OrdinalIgnoreCase);
         }
 
-        public bool EsFueraDeServicio()
+        public bool esFueraDeServicio()
         {
             return nombreEstado.Equals("Fuera de Servicio", StringComparison.OrdinalIgnoreCase);
         }
 
-        public bool EsAmbitoOrdenInspeccion()
+        public bool esAmbitoOrdenInspeccion()
         {
             return ambito.Equals("Orden de Inspección", StringComparison.OrdinalIgnoreCase);
         }
 
-        public bool EsAmbitoSismografico()
+        public bool esAmbitoSismografico()
         {
             return ambito.Equals("Sismográfico", StringComparison.OrdinalIgnoreCase);
         }

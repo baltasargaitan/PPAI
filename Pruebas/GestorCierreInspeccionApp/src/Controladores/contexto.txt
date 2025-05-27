@@ -1,0 +1,44 @@
+DATOS DEL CASO DE USO
+Nombre del Caso de uso: Dar cierre a orden de inspección de ES
+
+Actor Principal: Responsable de Inspecciones (RI)
+
+Objetivo: Registrar el cierre de orden de inspección para una estación sismológica.
+
+Flujo: Cierre de Orden de Inspección con el sismógrafo de la ES fuera de servicio.
+
+PASO A PASO DEL CASO DE USO
+1.
+RI: selecciona la opción “Cerrar Orden de Inspección”.
+2.
+Sistema: busca el empleado (RI) a través del usuario logueado y todas las órdenes de inspección del RI que están en estado completamente realizadas, mostrando al menos una, (visualiza el número de orden y fecha de finalización, el nombre la estación sismológica y el identificador del sismógrafo de la estación), ordenadas por fecha de finalización (Leer Observación 1).
+3.
+RI: selecciona una orden de inspección.
+4.
+Sistema: permite ingresar la observación de cierre a la orden de inspección.
+5.
+RI: ingresa la observación de cierre.
+6.
+Sistema: habilita actualizar la situación del sismógrafo de la ES para ponerlo como Fuera de Servicio. Busca y muestra los tipos de motivos por los que un sismógrafo se pone fuera de servicio y solicita seleccionar uno o varios de ellos y para cada uno ingresar un comentario.
+7.
+RI: selecciona uno o varios motivos tipo para sismógrafo fuera de servicio ingresando un comentario por cada uno.
+8.
+Sistema: solicita confirmación para cerrar la Orden de Inspección.
+9.
+RI: confirma el cierre de la Orden de Inspección.
+10.
+Sistema: valida que exista una observación de cierre de orden y al menos un motivo seleccionado asociado a la puesta a Fuera de Servicio y es correcto.
+11.
+Sistema: actualiza la orden de inspección a cerrada y registra la fecha y hora del sistema como fecha de cierre.
+12.
+Sistema: actualiza al sismógrafo de la ES como fuera de servicio, asociando al nuevo estado los motivos seleccionados por el RI, la fecha y hora del sistema como fecha en la que el sismógrafo deja de estar inhabilitado por inspección para estar fuera de servicio y el RI logueado responsable del cierre.
+13.
+Sistema: envía una notificación por defecto a los mails de los empleados responsables de reparaciones y la publica en los monitores del CCRS (Observación 2). Fin CU
+
+FLUJOS ALTERNATIVOS
+A1: El RI no tiene órdenes de inspección realizadas.
+A2. Habilita actualizar la situación del sismógrafo de la ES poniéndolo on-line (opción por defecto).
+A3: Valida que exista una observación de cierre de orden y al menos un motivo asociado a la puesta a Fuera de Servicio y hay datos faltantes.
+A4: Se notifica por mail únicamente.
+A6: Se notifica en pantallas únicamente.
+A7: El actor cancela la ejecución del caso de uso.

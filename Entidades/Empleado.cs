@@ -24,12 +24,12 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
             this.telefono = telefono;
             this.rol = rol;
         }
-        public bool EsResponsableDeReparacion()
+        public bool esResponsableDeReparacion()
         {
             // Lógica que determine si es responsable
             return true; // o false según tu lógica
         }
-        public Empleado GetEmpleado()
+        public Empleado getEmpleado()
         {
             return this;
         }

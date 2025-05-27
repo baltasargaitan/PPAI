@@ -30,13 +30,13 @@ namespace PPAI2025_3K1_4_1_Programa.Entidades
         }
 
         // Obtener el cambio de estado actual (el que no tiene fecha de fin)
-        public CambioEstado ObtenerEstadoActual()
+        public CambioEstado obtenerEstadoActual()
         {
             return cambiosEstado.FindLast(c => c.fechaHoraFin == null);
         }
 
         // Crear nuevo cambio de estado (y cerrar el actual si hay uno)
-        public void CrearCambioEstado(DateTime nuevaFechaInicio, Estado estad)
+        public void crearCambioEstado(DateTime nuevaFechaInicio, Estado estad)
         {
             // Cerrar el actual si está activo
             var actual = ObtenerEstadoActual();
